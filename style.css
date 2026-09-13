@@ -1,0 +1,47 @@
+body{
+    background-image: url("media/ChatGPT\ Image\ Aug\ 25\,\ 2026\,\ 08_44_20\ PM.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+}
+ h1, h2, h3 {
+            font-family: 'Fredoka', sans-serif;
+}
+nav a {
+    text-decoration: none;
+}
+
+nav a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 12px;
+    text-decoration-color: burlywood;
+}
+
+.container{
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    gap: 4rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+.flex{
+    
+}
