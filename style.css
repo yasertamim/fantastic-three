@@ -5,7 +5,29 @@ body{
     background-size: cover;
     font-family: 'Nunito', sans-serif;
 }
- h1, h2, h3 {
+
+/* colors */
+
+.purple{
+    color: #6C4CCF;
+}
+.soft-green{
+    color: #8FC47A;
+}
+.dark{
+    color: #172B4D;
+}
+
+.warm-yellow{
+    color: #F5C542;
+}
+.pink{
+    color: #E982A5;
+}
+
+
+
+ h1, h2, h3, span, p {
             font-family: 'Fredoka', sans-serif;
 }
 nav a {
@@ -38,10 +60,17 @@ nav a.active {
 }
 
 .hero{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10%;
     gap: 4rem;
 }
+span{
+    font-size: 4rem;
+    margin-left: 1rem;
+}
 .flex{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
