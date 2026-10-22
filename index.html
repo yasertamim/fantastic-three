@@ -1,39 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>My Web Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A private family gallery for sharing children's drawings.">
+  <title>My Art World — Our Family Art Gallery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
-     
-    <div class="container">
-        <nav class="header">
-            <a href="index.html">Hjem</a>
-            <a href="galleri.html">Galleri</a>
-            <a href="about.html">Om oss</a>
-            
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="My Art World home">
+      <span class="brand-mark" aria-hidden="true">🎨</span>
+      <span>Miral <b>Aouss</b> Tamara</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">⌂ <span>Home</span></a>
+      <a class="nav-link" href="#gallery">▧ <span>Gallery</span></a>
+      <a class="nav-link" href="#uploadSection">⊕ <span>Post Drawing</span></a>
+      <a class="nav-link" href="#family">☺ <span>Family Page</span></a>
+    </nav>
+    <button class="privacy-pill parent-mode-button" id="parentModeButton" type="button" aria-controls="uploadSection">🔒 Parent mode: locked</button>
+  </header>
 
-        </nav>
-        <div class="hero">
-            <div >
-                <p style="margin-left: 1rem;" class="dark">A special place for</p>
-                <span class="purple">big</span> <span class="soft-green">ideas</span> <span class="dark">&</span>
-                <div><span class="warm-yellow">little</span> <span class="pink">artists</span></div>
-            
-            </div>
-            <div>
-                <h2>Pictures</h2>
-            </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-doodles doodle-star">✦</div>
+      <div class="hero-doodles doodle-heart">♥</div>
+      <div class="hero-copy">
+        <p class="eyebrow">A LITTLE SPACE FOR BIG IMAGINATIONS</p>
+        <h1>Welcome to<br><span>My Art World!</span></h1>
+        <p class="hero-description">Draw, dream, and share your amazing artwork with the people who love you.</p>
+        <a class="button button-yellow" href="#uploadSection"><span aria-hidden="true">🖍️</span> Post Your Drawing</a>
+        <p class="privacy-note">🔒 Just for our family — a safe place to share.</p>
+      </div>
+      <div class="hero-art" aria-label="Illustration of children proudly showing their drawings">
+        <div class="sun">☀</div>
+        <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="kid kid-blue">
+          <div class="hair hair-dark"></div><div class="face"><span class="eye"></span><span class="eye"></span><span class="smile"></span></div>
+          <div class="body blue-body"></div>
+          <div class="drawing rocket-paper"><span>🚀</span><small>★　★</small></div>
         </div>
+        <div class="kid kid-pink">
+          <div class="hair hair-red"></div><div class="face"><span class="eye"></span><span class="eye"></span><span class="smile"></span></div>
+          <div class="body pink-body"></div>
+          <div class="drawing rainbow-paper"><span>🌈</span><small>♥　☁</small></div>
+        </div>
+        <span class="floating-pencil pencil-a">✏️</span><span class="floating-pencil pencil-b">🖍️</span>
+        <div class="grass"></div>
+      </div>
+    </section>
 
-    </div>
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <h2><span class="heading-star">★</span> Latest Drawings</h2>
+        <span class="family-label">Our family gallery</span>
+      </div>
+      <div class="gallery-tools">
+        <label for="kidFilter">Show drawings by</label>
+        <select id="kidFilter">
+          <option value="all">All kids</option>
+          <option value="Miral">Miral</option>
+          <option value="Aouss">Aouss</option>
+          <option value="Tamara">Tamara</option>
+      
+        </select>
+        <span class="filter-count" id="filterCount" aria-live="polite">8 drawings</span>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        <article class="art-card" data-artist="Miral">
+          <div class="artwork art-house" role="img" aria-label="A colorful house, sunshine, flowers and a tree">
+            <span class="sun-drawing">☀️</span><span class="house">🏠</span><span class="tree">🌳</span><span class="flowers">🌷 🌼 🌷</span>
+          </div><div class="art-meta"><span class="avatar avatar-peach">👧🏻</span><div><strong>Miral</strong><small>Today · 10:20</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Aouss">
+          <div class="artwork art-dino" role="img" aria-label="A friendly green dinosaur drawing"><span>🦕</span><i>✦</i></div>
+          <div class="art-meta"><span class="avatar avatar-blue">👦🏻</span><div><strong>Aouss</strong><small>Today · 09:45</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Tamara">
+          <div class="artwork art-cat" role="img" aria-label="A cute orange cat drawing"><span>🐱</span><i>♥</i></div>
+          <div class="art-meta"><span class="avatar avatar-yellow">👧🏽</span><div><strong>Tamara</strong><small>Yesterday</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Miral">
+          <div class="artwork art-space" role="img" aria-label="A rocket flying through space"><span>🚀</span><i>⭐ ✦ 🌙</i></div>
+          <div class="art-meta"><span class="avatar avatar-pink">👦🏽</span><div><strong>Miral</strong><small>Yesterday</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Miral">
+          <div class="artwork art-butterfly" role="img" aria-label="A colorful butterfly"><span>🦋</span><i>♥ ✿ ♥</i></div>
+          <div class="art-meta"><span class="avatar avatar-lilac">👧🏻</span><div><strong>Miral</strong><small>Monday</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Tamara">
+          <div class="artwork art-ocean" role="img" aria-label="A dolphin jumping in a blue sea"><span>🐬</span><i>☀️ 〰 〰</i></div>
+          <div class="art-meta"><span class="avatar avatar-green">👦🏻</span><div><strong>Tamara</strong><small>Monday</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Aouss">
+          <div class="artwork art-mountain" role="img" aria-label="Mountains, trees and a river"><span>🏔️</span><i>🌲 🌲 🌲</i></div>
+          <div class="art-meta"><span class="avatar avatar-peach">👧🏽</span><div><strong>Aouss</strong><small>Sunday</small></div></div>
+        </article>
+        <article class="art-card" data-artist="Aouss">
+          <div class="artwork art-car" role="img" aria-label="A red car on a road"><span>🚗</span><i>🌳 ☁️</i></div>
+          <div class="art-meta"><span class="avatar avatar-blue">👦🏽</span><div><strong>Aouss</strong><small>Sunday</small></div></div>
+        </article>
+      </div>
+      <p class="demo-note">These are sample cards to show the design. Add your family's drawings below!</p>
+    </section>
 
+    <section class="upload-section" id="uploadSection">
+      <div class="upload-card">
+        <div class="parent-lock-message" id="parentLockMessage">
+          <span class="lock-illustration" aria-hidden="true">🔐</span>
+          <div>
+            <p class="eyebrow">PARENT CONTROLS</p>
+            <h2>Posting is for the parent</h2>
+            <p>Unlock Parent mode to add drawings for the kids. Children can browse and filter the gallery without posting.</p>
+            <button class="button button-blue" id="unlockParentButton" type="button">Unlock Parent mode</button>
+          </div>
+        </div>
+        <div class="upload-form-wrap" id="uploadFormWrap" hidden>
+        <div class="upload-intro">
+          <span class="upload-icon">🖍️</span>
+          <div><p class="eyebrow">YOUR NEXT MASTERPIECE</p><h2>Share a new drawing</h2>
+          <p>Choose a picture from your device and give your artwork a name.</p></div>
+        </div>
+        <form id="uploadForm">
+          <label class="field-label" for="drawingTitle">Drawing name</label>
+          <input id="drawingTitle" name="drawingTitle" type="text" maxlength="60" placeholder="My amazing rainbow..." required>
+          <label class="field-label" for="artistName">Artist</label>
+          <input id="artistName" name="artistName" type="text" maxlength="30" placeholder="Who made this?" required>
+          <label class="field-label" for="drawingFile">Choose drawing picture</label>
+          <input id="drawingFile" name="drawingFile" type="file" accept="image/*" required>
+          <p class="form-hint">Prototype note: pictures are only added in this browser preview. They are not uploaded to a server or shared with family members.</p>
+          <button class="button button-blue" type="submit">✨ Add to this gallery</button>
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="family">
+    <div class="footer-art" aria-hidden="true">🖍️　🎨　🌈</div>
+    <p>Every drawing tells a story <span>♥</span></p>
+    <small>Made with love for our little artists.</small>
+    <div class="footer-lock">🔒 A private family space</div>
+  </footer>
 </body>
 </html>
