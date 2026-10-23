@@ -144,3 +144,115 @@ uploadForm?.addEventListener("submit", (event) => {
 });
 
 filterDrawings();
+
+
+const galleryCards = [
+  ...document.querySelectorAll("#galleryGrid .art-card")
+];
+
+const artViewer = document.getElementById("artViewer");
+const viewerImage = document.getElementById("viewerImage");
+const viewerArtist = document.getElementById("viewerArtist");
+const viewerDate = document.getElementById("viewerDate");
+const viewerCounter = document.getElementById("viewerCounter");
+
+const viewerClose = document.getElementById("viewerClose");
+const viewerPrev = document.getElementById("viewerPrev");
+const viewerNext = document.getElementById("viewerNext");
+
+let currentArtworkIndex = 0;
+let previouslyFocusedElement = null;
+
+function displayArtwork(index) {
+  if (!galleryCards.length) return;
+
+  // Wrap around at the beginning and end
+  currentArtworkIndex =
+    (index + galleryCards.length) % galleryCards.length;
+
+  const card = galleryCards[currentArtworkIndex];
+  const image = card.querySelector(".artwork-image");
+
+  if (!image) return;
+
+  viewerImage.src = image.src;
+  viewerImage.alt = image.alt || "Children's artwork";
+
+  viewerArtist.textContent =
+    card.dataset.artist ||
+    card.querySelector(".art-meta strong")?.textContent ||
+    "Little Artist";
+
+  viewerDate.textContent =
+    card.dataset.date ||
+    card.querySelector(".art-meta small")?.textContent ||
+    "";
+
+  viewerCounter.textContent =
+    `${currentArtworkIndex + 1} / ${galleryCards.length}`;
+
+  const hasMultipleImages = galleryCards.length > 1;
+  viewerPrev.hidden = !hasMultipleImages;
+  viewerNext.hidden = !hasMultipleImages;
+}
+
+function openArtViewer(index) {
+  previouslyFocusedElement = document.activeElement;
+
+  displayArtwork(index);
+
+  artViewer.classList.add("active");
+  artViewer.setAttribute("aria-hidden", "false");
+  document.body.classList.add("viewer-open");
+
+  viewerClose.focus();
+}
+
+function closeArtViewer() {
+  artViewer.classList.remove("active");
+  artViewer.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("viewer-open");
+
+  viewerImage.removeAttribute("src");
+
+  if (previouslyFocusedElement?.isConnected) {
+    previouslyFocusedElement.focus();
+  }
+}
+
+// Click any artwork to open it
+galleryCards.forEach((card, index) => {
+  card.addEventListener("click", () => openArtViewer(index));
+});
+
+// Navigate between drawings
+viewerPrev.addEventListener("click", () => {
+  displayArtwork(currentArtworkIndex - 1);
+});
+
+viewerNext.addEventListener("click", () => {
+  displayArtwork(currentArtworkIndex + 1);
+});
+
+// Close button
+viewerClose.addEventListener("click", closeArtViewer);
+
+// Close when clicking the dark background
+artViewer.addEventListener("click", event => {
+  if (event.target === artViewer) {
+    closeArtViewer();
+  }
+});
+
+// Keyboard controls
+document.addEventListener("keydown", event => {
+  if (!artViewer.classList.contains("active")) return;
+
+  if (event.key === "Escape") {
+    closeArtViewer();
+  } else if (event.key === "ArrowLeft") {
+    displayArtwork(currentArtworkIndex - 1);
+  } else if (event.key === "ArrowRight") {
+    displayArtwork(currentArtworkIndex + 1);
+  }
+});
