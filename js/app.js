@@ -266,7 +266,8 @@ document.addEventListener("keydown", event => {
 });
 
 
-
+/*
+script to handle the like button
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("#galleryGrid .art-card").forEach(function (card, index) {
     const button = card.querySelector(".like-button");
@@ -319,3 +320,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { passive: true });
   });
 });
+
+
+*/
