@@ -222,9 +222,17 @@ function closeArtViewer() {
 
 // Click any artwork to open it
 galleryCards.forEach((card, index) => {
-  card.addEventListener("click", () => openArtViewer(index));
-});
+  card.addEventListener("click", (event) => {
+    // Ignore clicks originating from interactive elements
+    if (event.target.closest(
+      ".like-button, button, a, input, textarea, select"
+    )) {
+      return;
+    }
 
+    openArtViewer(index);
+  });
+});
 // Navigate between drawings
 viewerPrev.addEventListener("click", () => {
   displayArtwork(currentArtworkIndex - 1);
@@ -286,8 +294,8 @@ document.addEventListener("DOMContentLoaded", function () {
       button.querySelector(".like-count").textContent = String(count);
     }
 
-    button.addEventListener("click", function (event) {
-      // Prevent the click from bubbling up to the artwork card.
+      function handleLike(event) {
+      event.preventDefault();
       event.stopPropagation();
 
       liked = !liked;
@@ -301,8 +309,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       localStorage.setItem(countKey, String(count));
       render();
-    });
+    }
 
-    render();
+    button.addEventListener("click", handleLike);
+
+    // Extra protection for mobile touch interactions
+    button.addEventListener("touchend", function (event) {
+      event.stopPropagation();
+    }, { passive: true });
   });
 });
