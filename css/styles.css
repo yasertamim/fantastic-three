@@ -272,3 +272,50 @@ body.viewer-open {
     left: 12px;
   }
 }
+
+
+
+.art-actions {
+  padding: 0 18px 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 13px;
+  border: 1px solid #f0dce3;
+  border-radius: 20px;
+  background: #fff7fa;
+  color: #555568;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.like-button:hover {
+  background: #ffe8ef;
+  transform: translateY(-1px);
+}
+
+.like-heart {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.like-button.liked {
+  background: #ffe4ec;
+  color: #e34b78;
+  border-color: #f5b8cb;
+}
+
+.like-button.liked .like-heart {
+  color: #e34b78;
+}
+
+.like-count {
+  font-weight: 700;
+}

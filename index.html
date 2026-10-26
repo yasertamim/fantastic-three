@@ -35,6 +35,18 @@
     @media(max-width:560px){.blog-grid{grid-template-columns:1fr}.blog-card-art{min-height:155px}}
   </style>
 
+
+  <style>
+    .art-actions{display:flex;justify-content:flex-start;padding:0 18px 16px}
+    .like-button{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid #f0dce3;border-radius:20px;background:#fff7fa;color:#555568;font:inherit;font-size:14px;cursor:pointer;transition:background .2s ease,transform .2s ease}
+    .like-button:hover{background:#ffe8ef;transform:translateY(-1px)}
+    .like-button:focus-visible{outline:3px solid #dba8f5;outline-offset:3px}
+    .like-button.liked{background:#ffe4ec;color:#e34b78;border-color:#f5b8cb}
+    .like-heart{font-size:21px;line-height:1}
+    .like-button.liked .like-heart{color:#e34b78}
+    .like-count{font-weight:700;min-width:1ch}
+  </style>
+
 </head>
 <body>
   <header class="site-header">
@@ -117,6 +129,14 @@
       <small>Fredag · 23.10.2026</small>
     </div>
   </div>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
 </article>
 <article class="art-card" data-artist="Tamara">
   <div class="artwork">
@@ -133,6 +153,13 @@
       <strong>Tamara</strong>
       <small>Fredag · 23.10.2026</small>
     </div>
+  </div>
+   <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false">
+      <span class="like-heart">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
   </div>
 </article>
 <article class="art-card" data-artist="Aouss">
@@ -151,6 +178,14 @@
       <small>Fredag · 23.10.2026</small>
     </div>
   </div>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
 </article>
 <article class="art-card" data-artist="Miral">
   <div class="artwork">
@@ -167,6 +202,14 @@
       <strong>Miral</strong>
       <small>Fredag · 23.10.2026</small>
     </div>
+  </div>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
   </div>
 </article>
 <article class="art-card" data-artist="Miral">
@@ -185,6 +228,14 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
 </article>
 <article class="art-card" data-artist="Tamara">
   <div class="artwork">
@@ -202,7 +253,15 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
-  </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
   <article class="art-card" data-artist="Tamara">
   <div class="artwork">
     <img
@@ -219,7 +278,15 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
-  </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
     <article class="art-card" data-artist="Tamara">
   <div class="artwork">
     <img
@@ -236,7 +303,15 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
-  </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
 
      <article class="art-card" data-artist="Aouss">
   <div class="artwork">
@@ -254,7 +329,15 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
-  </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
 
   <article class="art-card" data-artist="Aouss">
   <div class="artwork">
@@ -272,7 +355,15 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
-  </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
 
   <article class="art-card" data-artist="Miral">
   <div class="artwork">
@@ -290,6 +381,14 @@
       <small>Søndag · 25.10.2026</small>
     </div>
   </div>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
 </article>
 
 
@@ -298,35 +397,99 @@
           <div class="artwork art-house" role="img" aria-label="A colorful house, sunshine, flowers and a tree">
             <span class="sun-drawing">☀️</span><span class="house">🏠</span><span class="tree">🌳</span><span class="flowers">🌷 🌼 🌷</span>
           </div><div class="art-meta"><span class="avatar avatar-peach">👧🏻</span><div><strong>Miral</strong><small>Today · 10:20</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Aouss">
           <div class="artwork art-dino" role="img" aria-label="A friendly green dinosaur drawing"><span>🦕</span><i>✦</i></div>
           <div class="art-meta"><span class="avatar avatar-blue">👦🏻</span><div><strong>Aouss</strong><small>Today · 09:45</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Tamara">
           <div class="artwork art-cat" role="img" aria-label="A cute orange cat drawing"><span>🐱</span><i>♥</i></div>
           <div class="art-meta"><span class="avatar avatar-yellow">👧🏽</span><div><strong>Tamara</strong><small>Yesterday</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Miral">
           <div class="artwork art-space" role="img" aria-label="A rocket flying through space"><span>🚀</span><i>⭐ ✦ 🌙</i></div>
           <div class="art-meta"><span class="avatar avatar-pink">👦🏽</span><div><strong>Miral</strong><small>Yesterday</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Miral">
           <div class="artwork art-butterfly" role="img" aria-label="A colorful butterfly"><span>🦋</span><i>♥ ✿ ♥</i></div>
           <div class="art-meta"><span class="avatar avatar-lilac">👧🏻</span><div><strong>Miral</strong><small>Monday</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Tamara">
           <div class="artwork art-ocean" role="img" aria-label="A dolphin jumping in a blue sea"><span>🐬</span><i>☀️ 〰 〰</i></div>
           <div class="art-meta"><span class="avatar avatar-green">👦🏻</span><div><strong>Tamara</strong><small>Monday</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Aouss">
           <div class="artwork art-mountain" role="img" aria-label="Mountains, trees and a river"><span>🏔️</span><i>🌲 🌲 🌲</i></div>
           <div class="art-meta"><span class="avatar avatar-peach">👧🏽</span><div><strong>Aouss</strong><small>Sunday</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
         <article class="art-card" data-artist="Aouss">
           <div class="artwork art-car" role="img" aria-label="A red car on a road"><span>🚗</span><i>🌳 ☁️</i></div>
           <div class="art-meta"><span class="avatar avatar-blue">👦🏽</span><div><strong>Aouss</strong><small>Sunday</small></div></div>
-        </article>
+
+  <div class="art-actions">
+    <button class="like-button" type="button" aria-pressed="false" aria-label="Like this drawing">
+      <span class="like-heart" aria-hidden="true">♡</span>
+      <span class="like-text">Like</span>
+      <span class="like-count">0</span>
+    </button>
+  </div>
+</article>
 
 
 
@@ -456,5 +619,6 @@
     <small>Laget med kjærlighet for våre små kunstnere.</small>
     <div class="footer-lock">🔒 vår privat rom for familien</div>
   </footer>
+
 </body>
 </html>

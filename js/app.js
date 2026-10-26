@@ -256,3 +256,53 @@ document.addEventListener("keydown", event => {
     displayArtwork(currentArtworkIndex + 1);
   }
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("#galleryGrid .art-card").forEach(function (card, index) {
+    const button = card.querySelector(".like-button");
+    if (!button) return;
+
+    const image = card.querySelector(".artwork-image");
+    const artist = card.dataset.artist || "unknown";
+    const imagePath = image ? image.getAttribute("src") : "drawing-" + index;
+    const key = "my-art-world-like:" + artist + ":" + imagePath;
+    const countKey = key + ":count";
+
+    let liked = localStorage.getItem(key) === "true";
+    let count = Number(localStorage.getItem(countKey) || 0);
+
+    function render() {
+      button.classList.toggle("liked", liked);
+      button.setAttribute("aria-pressed", String(liked));
+      button.setAttribute(
+        "aria-label",
+        (liked ? "Unlike " : "Like ") + artist + "'s drawing"
+      );
+
+      button.querySelector(".like-heart").textContent = liked ? "♥" : "♡";
+      button.querySelector(".like-text").textContent = liked ? "Liked" : "Like";
+      button.querySelector(".like-count").textContent = String(count);
+    }
+
+    button.addEventListener("click", function (event) {
+      // Prevent the click from bubbling up to the artwork card.
+      event.stopPropagation();
+
+      liked = !liked;
+      count = Math.max(0, count + (liked ? 1 : -1));
+
+      if (liked) {
+        localStorage.setItem(key, "true");
+      } else {
+        localStorage.removeItem(key);
+      }
+
+      localStorage.setItem(countKey, String(count));
+      render();
+    });
+
+    render();
+  });
+});
